@@ -6,11 +6,12 @@
 <h2>Read the important heading!</h2>
 <h3>Friendly reminder - read THAT heading</h3>
 <body>
-    <p><em>Okayyy, we're ready to move on!</em></p>
+    {% for post in posts %}
     <div>
-    <p><strong>Django Day Post</strong></p>
-    <a href="https://djangogirls.org">link</a> 
-    <p>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
+{% endfor %}
 </body>
 </html>
